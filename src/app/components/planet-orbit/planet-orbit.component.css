@@ -1,0 +1,59 @@
+:host {
+    display: block;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.orbit {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    animation: rotate 10s linear infinite;
+}
+
+.earth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 450px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Nasa_blue_marble.jpg/640px-Nasa_blue_marble.jpg') no-repeat center/cover;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.satellite {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/PACE_Spacecraft_beauty1.jpg/640px-PACE_Spacecraft_beauty1.jpg') no-repeat center/cover;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(360deg);
+    }
+}
